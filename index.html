@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administração de Eventos - RDR</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    
+    select, input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    
+    .row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .col {
+      flex: 1;
+    }
+    
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #2980b9;
+    }
+    
+    .success-message, .error-message {
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      display: none;
+    }
+    
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    
+    .error-message {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    
+    .section {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Administração de Eventos</h1>
+        
+        <div id="success-message" class="success-message">Dados atualizados com sucesso!</div>
+        <div id="error-message" class="error-message">Erro ao atualizar dados.</div>
+        
+        <div class="card">
+          <h2>Configuração de Evento</h2>
+          
+          <div class="section">
+            <h3>Datas e Dias</h3>
+            <div class="row">
+                <label for="mes">Mês do Jejum:</label>
+                <select id="mes">
+                  <option value="">Selecione</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                
+                  <label for="data-inicio">Primeiro Dia:</label>
+                  <select id="data-inicio">
+                    <option value="">Selecione</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="data-intermediaria">Segundo Dia:</label>
+                  <select id="data-intermediaria">
+                    <option value="">Selecione</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="data-fim">Terceiro Dia:</label>
+                  <select id="data-fim">
+                    <option value="">Selecione</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="dia-semana-inicio">Dia da Semana (Início):</label>
+                  <select id="dia-semana-inicio">
+                    <option value="">Selecione</option>
+                    <option value="segunda">Segunda-feira</option>
+                    <option value="terça">Terça-feira</option>
+                    <option value="quarta">Quarta-feira</option>
+                    <option value="quinta">Quinta-feira</option>
+                    <option value="sexta">Sexta-feira</option>
+                    <option value="sábado">Sábado</option>
+                    <option value="domingo">Domingo</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="dia-semana-fim">Dia da Semana (Fim):</label>
+                  <select id="dia-semana-fim">
+                    <option value="">Selecione</option>
+                    <option value="segunda">Segunda-feira</option>
+                    <option value="terça">Terça-feira</option>
+                    <option value="quarta">Quarta-feira</option>
+                    <option value="quinta">Quinta-feira</option>
+                    <option value="sexta">Sexta-feira</option>
+                    <option value="sábado">Sábado</option>
+                    <option value="domingo">Domingo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="section">
+            <h3>Horários para Jovens</h3>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="horas-jovens-1">Primeiro Horário:</label>
+                  <select id="horas-jovens-1">
+                    <option value="6 a 7">4 a 5</option>
+                    <option value="6 a 7">4 a 6</option>
+                    <option value="7 a 8">5 a 6</option>
+                    <option value="8 a 9">6 a 7</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="horas-jovens-2">Segundo Horário:</label>
+                  <select id="horas-jovens-2">
+                    <option value="6 a 7">6 a 7</option>
+                    <option value="6 a 7">6 a 8</option>
+                    <option value="7 a 8">7 a 8</option>
+                    <option value="8 a 9">8 a 9</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="section">
+            <h3>Horários para Adultos</h3>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="horas-adultos-1">Primeiro Horário:</label>
+                  <select id="horas-adultos-1">
+                    <option value="6 a 7">6 a 7</option>
+                    <option value="6 a 8">6 a 8</option>
+                    <option value="7 a 8">7 a 8</option>
+                    <option value="8 a 9">8 a 9</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="horas-adultos-2">Segundo Horário:</label>
+                  <select id="horas-adultos-2">
+                    <option value="">Selecione</option>
+                    <option value="8 a 9">8 a 9</option>
+                    <option value="8 a 10">8 a 10</option>
+                    <option value="9 a 11">9 a 11</option>
+                    <option value="10 a 12">10 a 12</option>                
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <button id="salvar-dados">Atualizar Configurações</button>
+          </div>
+        </div>
+      </div>
+  <!-- Importação dos scripts do Firebase como módulos ES6 -->
+  <script type="module">
+    // Importações do Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+
+    // Configuração do Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyAz7EaASw3bGM2KYcN1PFo4QbdzC8_lfdU",
+      authDomain: "eventos-rdr.firebaseapp.com",
+      databaseURL: "https://eventos-rdr-default-rtdb.firebaseio.com",
+      projectId: "eventos-rdr",
+      storageBucket: "eventos-rdr.firebasestorage.app",
+      messagingSenderId: "820714214725",
+      appId: "1:820714214725:web:c48ec5ea89a4281c8c9a2c",
+      measurementId: "G-5S05E5C37J"
+    };
+
+    // Inicializa o Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+
+    // Elementos do DOM
+    const btnSalvar = document.getElementById('salvar-dados');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    // Função para mostrar mensagens temporárias
+    function mostrarMensagem(elemento, duracao = 3000) {
+      elemento.style.display = 'block';
+      setTimeout(() => {
+        elemento.style.display = 'none';
+      }, duracao);
+    }
+
+    // Função para validar os campos obrigatórios
+    function validarCampos() {
+      const camposObrigatorios = [
+        'data-inicio',
+        'data-fim',
+        'dia-semana-inicio',
+        'dia-semana-fim',
+        'mes'
+      ];
+      
+      let camposValidos = true;
+      
+      camposObrigatorios.forEach(id => {
+        const campo = document.getElementById(id);
+        if (!campo.value) {
+          campo.style.borderColor = '#dc3545';
+          camposValidos = false;
+        } else {
+          campo.style.borderColor = '#ddd';
+        }
+      });
+      
+      return camposValidos;
+    }
+
+    // Função para salvar dados no Realtime Database
+    async function salvarDados() {
+      try {
+        // Validar campos
+        if (!validarCampos()) {
+          errorMessage.textContent = "Preencha todos os campos obrigatórios.";
+          mostrarMensagem(errorMessage);
+          return;
+        }
+        
+        // Coletar valores dos campos
+        const dados = {
+          mes: document.getElementById('mes').value,
+          primeiro_dia: document.getElementById('data-inicio').value,
+          segundo_dia: document.getElementById('data-intermediaria').value,
+          ultimo_dia: document.getElementById('data-fim').value,
+          dia_semana_i: document.getElementById('dia-semana-inicio').value,
+          dia_semana_f: document.getElementById('dia-semana-fim').value,
+          horas_jovens_1: document.getElementById('horas-jovens-1').value,
+          horas_jovens_2: document.getElementById('horas-jovens-2').value,
+          horas_adultos_1: document.getElementById('horas-adultos-1').value,
+          horas_adultos_2: document.getElementById('horas-adultos-2').value
+        };
+        
+        // Referência para o nó 'eventos'
+        const eventosRef = ref(database, 'jejum');
+        
+        // Salvar dados
+        await set(eventosRef, dados);
+        
+        // Mostrar mensagem de sucesso
+        mostrarMensagem(successMessage);
+        
+        console.log('Dados salvos com sucesso:', dados);
+      } catch (erro) {
+        // Mostrar mensagem de erro
+        errorMessage.textContent = `Erro ao salvar dados: ${erro.message}`;
+        mostrarMensagem(errorMessage);
+        
+        console.error('Erro ao salvar dados:', erro);
+      }
+    }
+
+    // Adicionar evento de clique ao botão de salvar
+    btnSalvar.addEventListener('click', salvarDados);
+  </script>
+</body>
+</html>
